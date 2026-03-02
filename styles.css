@@ -1,0 +1,58 @@
+/* Theme tokens used by popup UI */
+:root {
+  --bg: #ffffff;
+  --accent: #4aa57d; /* Premium Green */
+  --accent2: #111;   /* Sleek Black */
+  --card: #f2f3f5;
+  --text: #111;
+  --chipOn: #e6f4ee;
+  --chipOnBorder: #9bd3ba;
+}
+
+/* Base popup layout */
+body { width: 350px; font-family: 'Segoe UI', sans-serif; padding: 15px; background: var(--bg); }
+.card { background: var(--card); padding: 15px; border-radius: 8px; }
+.field { margin-bottom: 12px; }
+.label { font-size: 12px; font-weight: 700; margin-bottom: 5px; color: #555; text-transform: uppercase; }
+
+/* Shared input styling */
+.input { 
+  width: 100%; padding: 10px; border: 1px solid #ddd; 
+  border-radius: 4px; font-size: 14px; outline: none; 
+}
+.input:focus { border-color: var(--accent); }
+
+/* City chip multi-select */
+.chips { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
+.chip { 
+  padding: 6px 12px; background: #fff; border: 1px solid #ddd; 
+  font-size: 12px; cursor: pointer; border-radius: 20px; transition: 0.2s;
+}
+.chip.on { background: var(--chipOn); border-color: var(--chipOnBorder); color: var(--accent); }
+
+/* Buttons */
+.btn { 
+  width: 100%; height: 40px; border: none; font-weight: 700; 
+  cursor: pointer; transition: 0.3s; 
+}
+.btnGreen { background: var(--accent); color: white; }
+.btnBlack { background: var(--accent2); color: white; }
+
+/* Toggle row text alignment */
+.row { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
+.toggleRow { justify-content: flex-start; }
+.toggleText { font-size: 13px; font-weight: 600; color: #333; }
+
+/* Custom iOS-style switch */
+.switch { position: relative; display: inline-block; width: 44px; height: 24px; }
+.switch input { opacity: 0; width: 0; height: 0; }
+.slider {
+  position: absolute; cursor: pointer; top: 0; left: 0; right: 0; bottom: 0;
+  background-color: #cfd4da; transition: 0.2s; border-radius: 12px;
+}
+.slider:before {
+  position: absolute; content: ""; height: 18px; width: 18px; left: 3px; top: 3px;
+  background-color: white; transition: 0.2s; border-radius: 50%;
+}
+.switch input:checked + .slider { background-color: var(--accent); }
+.switch input:checked + .slider:before { transform: translateX(20px); }
